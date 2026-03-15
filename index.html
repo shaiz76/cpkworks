@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CPKWorks — Coming Soon</title>
+  <meta name="description" content="IT Consulting & Software Development. Coming Soon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #1a1a2e;
+      --accent: #4f46e5;
+      --accent-light: #818cf8;
+      --bg: #f9fafb;
+      --surface: #ffffff;
+      --border: #e5e7eb;
+      --text-main: #111827;
+      --text-sub: #6b7280;
+      --text-muted: #9ca3af;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-mark svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+    }
+
+    .logo-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    .logo-text span {
+      color: var(--accent);
+    }
+
+    header nav a {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    header nav a:hover {
+      color: var(--accent);
+    }
+
+    /* ── Hero ── */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ede9fe;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 99px;
+      margin-bottom: 28px;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text-main);
+      max-width: 700px;
+      margin-bottom: 24px;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-sub);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 48px;
+    }
+
+    /* ── Services ── */
+    .services {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 56px;
+    }
+
+    .service-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-main);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .service-chip .icon {
+      font-size: 1.1rem;
+    }
+
+    /* ── Contact CTA ── */
+    .cta-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 48px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    .cta-box p {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 13px 28px;
+      border-radius: 10px;
+      transition: background 0.2s, transform 0.15s;
+      margin-bottom: 16px;
+    }
+
+    .email-link:hover {
+      background: #4338ca;
+      transform: translateY(-1px);
+    }
+
+    .email-link svg {
+      width: 16px;
+      height: 16px;
+      fill: #fff;
+    }
+
+    .cta-note {
+      font-size: 0.78rem !important;
+      color: var(--text-muted) !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 99px;
+      margin: 0 auto 20px;
+      opacity: 0.3;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 28px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: var(--surface);
+    }
+
+    footer strong {
+      color: var(--text-sub);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      header {
+        padding: 20px 24px;
+      }
+
+      .cta-box {
+        padding: 28px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a class="logo" href="#">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <span class="logo-text">CPK<span>Works</span></span>
+    </a>
+    <nav>
+      <a href="mailto:austin.chung@cpkworks.com">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Coming Soon
+    </div>
+
+    <h1>Your Trusted Partner in<br /><em>IT Consulting</em> &amp; Development</h1>
+
+    <p class="subtitle">
+      We help businesses modernize, scale, and innovate — from strategic IT consulting
+      to full-cycle custom software development. Something great is on the way.
+    </p>
+
+    <!-- Service chips -->
+    <div class="services">
+      <div class="service-chip"><span class="icon">🧭</span> IT Strategy &amp; Consulting</div>
+      <div class="service-chip"><span class="icon">💻</span> Custom Software Development</div>
+      <div class="service-chip"><span class="icon">☁️</span> Cloud &amp; Infrastructure</div>
+      <div class="service-chip"><span class="icon">🔒</span> Security &amp; Compliance</div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <div class="divider"></div>
+      <p>Interested in working with us or have a project in mind?<br />Reach out — we'd love to hear from you.</p>
+      <a class="email-link" href="mailto:austin.chung@cpkworks.com">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        austin.chung@cpkworks.com
+      </a>
+      <p class="cta-note">We typically respond within 1 business day.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 <strong>CPKWorks</strong>. All rights reserved. &nbsp;·&nbsp; cpkworks.com
+  </footer>
+
+</body>
+</html>
